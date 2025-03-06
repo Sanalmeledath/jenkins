@@ -1,0 +1,22 @@
+pipeline {
+    agent{
+      label "sma-vm-pcs.dev1.mdmgr.net"  
+    } 
+    environment{
+        name1 = "sanal"
+        name2 = "gouri"
+    }
+    stages{
+        stage ('build'){
+            environment{
+                name3 = "gouri"
+            }
+            steps{
+                echo "name1 $(name1)"
+                echo "name2 $(name2)"
+                echo "name3 $(name3)"
+                
+            }
+        }
+    }
+}
